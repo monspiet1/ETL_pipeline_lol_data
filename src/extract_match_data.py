@@ -8,19 +8,17 @@ import os
 logging.basicConfig(level=logging.INFO, format='%(asctime)s - %(levelname)s - %(message)s')
 
 players_puuids = [
-    "5mmIq5J0PT9sFRfB6xGrEqxcVaEQGLBmC7le_tyfF26PcAqFPoQeCmjYgT2OJjDS9B8hdKM367n7aA", # andrey 1
-    "carEkMjfnuzRT_WpE6PqHB4muNKff25c9xMRdCxRyrEm9TagTFDfv7uDBIGa_bHGAMxA-BISDBHRfw", # nicolas 2
-    "ROMMmVOtXhOrdd1-vEE4fjYFVIwpGZYPeM7sO2SPuOElaTc0nj5U-y6NqR1xXtufs5pibHYz7SPI9w", # samih 3
-    "bSBwx7rukHEZug8N4lAxDggKT27_pgnKNnAu50qq3msJdf2nMizG2VzfHVTmwDsagnwdogrHw66pSQ", # maria 4
-    "5cOVn9ZINUO4Ukd-PVmgtEZHqvu0PikPiUkMTrb6K8CzP5Fd-FWPxNVEWayj6EUQSF_ctmNWmqBVqg", # gustavo 5 
-    "1VvhvasECXxYfpFhkpNH-h-ZYVAn1ZD0YgGM49CW2u6q4o8ISveMwSz7JjRgt8njJptZLshg1WAj5g", # ramon 6
-    "fUWcifhm4SBGLeY45I4t2QY0I28Lk62mNtOhER3kZNuh9xeACXZznoBigQJX1DW-yWHTcz2jnXwb_g" # daniel 7
+    "5mmIq5J0PT9sFRfB6xGrEqxcVaEQGLBmC7le_tyfF26PcAqFPoQeCmjYgT2OJjDS9B8hdKM367n7aA", 
+    "carEkMjfnuzRT_WpE6PqHB4muNKff25c9xMRdCxRyrEm9TagTFDfv7uDBIGa_bHGAMxA-BISDBHRfw", 
+    "ROMMmVOtXhOrdd1-vEE4fjYFVIwpGZYPeM7sO2SPuOElaTc0nj5U-y6NqR1xXtufs5pibHYz7SPI9w", 
+    "bSBwx7rukHEZug8N4lAxDggKT27_pgnKNnAu50qq3msJdf2nMizG2VzfHVTmwDsagnwdogrHw66pSQ", 
+    "5cOVn9ZINUO4Ukd-PVmgtEZHqvu0PikPiUkMTrb6K8CzP5Fd-FWPxNVEWayj6EUQSF_ctmNWmqBVqg", 
+    "1VvhvasECXxYfpFhkpNH-h-ZYVAn1ZD0YgGM49CW2u6q4o8ISveMwSz7JjRgt8njJptZLshg1WAj5g", 
+    "fUWcifhm4SBGLeY45I4t2QY0I28Lk62mNtOhER3kZNuh9xeACXZznoBigQJX1DW-yWHTcz2jnXwb_g" 
 ]
 
 
 API_KEY = os.getenv('API_KEY')
-#{encryptedPUUID}/ids?start=0&count=1'
-
 
 url_match_id = f'https://americas.api.riotgames.com/lol/match/v5/matches/by-puuid/' 
 url_match_data = f'https://americas.api.riotgames.com/lol/match/v5/matches/'

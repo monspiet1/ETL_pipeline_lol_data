@@ -16,11 +16,6 @@ password = os.getenv('DB_PASSWORD')
 database = os.getenv('DB_NAME')
 host = 'postgres'
 
-logging.info(f"-> Nome: {user}")
-logging.info(f"-> Senha: {password}")
-logging.info(f"-> Database: {database}")
-logging.info(f"-> Host: {host}")
-
 matches_path = Path(__file__).resolve().parent.parent / 'sql' / 'insert_matches.sql'
 teams_path = Path(__file__).resolve().parent.parent / 'sql' / 'insert_teams.sql'
 players_path = Path(__file__).resolve().parent.parent / 'sql' / 'insert_players.sql'
@@ -64,8 +59,6 @@ def load_teams_data(df: pd.DataFrame):
 
 def load_players_data(df: pd.DataFrame):
     # verificar se o ID da partida ja existe na tabela
-    print('Df recebido na função load_players_data -> ', df['match_id'])
-    
     data = df.to_dict(orient="records")
     
     with engine.begin() as conn:

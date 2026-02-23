@@ -17,7 +17,7 @@ load_dotenv(env_path)
 
 
 players_puuids = [
-    "5mmIq5J0PT9sFRfB6xGrEqxcVaEQGLBmC7le_tyfF26PcAqFPoQeCmjYgT2OJjDS9B8hdKM367n7aA", # andrey
+    "5mmIq5J0PT9sFRfB6xGrEqxcVaEQGLBmC7le_tyfF26PcAqFPoQeCmjYgT2OJjDS9B8hdKM367n7aA", 
     "carEkMjfnuzRT_WpE6PqHB4muNKff25c9xMRdCxRyrEm9TagTFDfv7uDBIGa_bHGAMxA-BISDBHRfw",
     "ROMMmVOtXhOrdd1-vEE4fjYFVIwpGZYPeM7sO2SPuOElaTc0nj5U-y6NqR1xXtufs5pibHYz7SPI9w",
     "bSBwx7rukHEZug8N4lAxDggKT27_pgnKNnAu50qq3msJdf2nMizG2VzfHVTmwDsagnwdogrHw66pSQ",

@@ -219,17 +219,12 @@ def create_matches_dataframes(path_name: str) -> pd.DataFrame:
 
 def create_teams_dataframe(df_matches: pd.DataFrame) -> pd.DataFrame:
     logging.info("-> Criando Dataframe dos times a partir do Dataframe de partidas..")
+
     # Teams dataframe
     teams_exploded = df_matches.explode('info.teams')
     df_teams = pd.json_normalize(teams_exploded['info.teams'])
     df_teams['match_id'] = teams_exploded['metadata.matchId'].values
-    null_match_id = df_teams[df_teams['match_id'].isna()]
 
-        # Mostra quantas linhas têm match_id nulo
-    logging.info(f"Linhas com match_id nulo: {len(null_match_id)}")
-
-        # Mostra as linhas
-    logging.info(null_match_id)
 
     logging.info(f"\n-> Dataframe 'Teams' criado com sucesso! \n {len(df_teams)} linhas detectadas")
     return df_teams
@@ -243,15 +238,8 @@ def create_players_dataframe(df_matches: pd.DataFrame) -> pd.DataFrame:
     df_players = pd.json_normalize(players_exploded['info.participants'])
 
     df_players['match_id'] = players_exploded['metadata.matchId'].values
-    null_match_id = df_players[df_players['match_id'].isna()]
 
-        # Mostra quantas linhas têm match_id nulo
-    logging.info(f"Linhas com match_id nulo: {len(null_match_id)}")
-
-        # Mostra as linhas
-    logging.info(null_match_id)
-
-    logging.info(f"\n-> Dataframe 'Players' criado com sucesso com o .values() \n {df_players['match_id'].dropna().tolist()} linhas detectadas")
+    logging.info(f"\n-> Dataframe 'Players' criado com sucesso! \n {len(df_players)}linhas detectadas")
 
     return df_players
 
@@ -320,9 +308,6 @@ def transform_players_data(df_players: pd.DataFrame, df_matches: pd.DataFrame, c
 
     # Renomeando as colunas restantes
     new_df_players = new_df_players.rename(columns=cols_to_rename).reset_index(drop=True)
-
-    print('PRINT DENTRO DA FUNÇÃO DE TRANSFORMAÇÃO DOS DADOS DE PLAYERS')
-    print(new_df_players['match_id'])
 
     logging.info("-> Dados de jogadores transformados!")
     return new_df_players
